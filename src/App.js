@@ -1,23 +1,88 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
+import "./App.css";
+// יש להוסיף את התמונה לפרויקט
+import sofaImage from "./assets/images/sofa.png"; // התאם את הנתיב לפי המיקום בפרויקט שלך
 
 function App() {
+  const primaryColor = "#BE2A37"; // הצבע האדום מהלוגו
+  const bgColor = "#f1efeb"; // צבע רקע בז'/אפור בהיר
+  const whiteColor = "#FFFFFF"; // לבן
+  const darkGray = "#333333"; // אפור כהה לטקסטים
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
+    <div
+      className="vh-100 d-flex flex-column justify-content-center align-items-center text-center p-3 position-relative overflow-hidden"
+      style={{
+        background: bgColor,
+        direction: "rtl",
+      }}
+    >
+      {/* תמונת הספה בתחתית */}
+      <img src={sofaImage} alt="רהיט" className="sofa-image" />
+
+      <div className="container position-relative z-1">
+        <h1 className="display-1 main-title" style={{ color: darkGray }}>
+          הפתיחה בקרוב
+        </h1>
+
+        <p className="lead mb-4 subtitle" style={{ color: darkGray }}>
+          בדיוק כמו הרהיטים שלנו, חשוב לנו שתרגישו בבית
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+        <div className="row justify-content-center">
+          <div className="col-md-6">
+            <div
+              className="card bg-light p-4 shadow-sm"
+              style={{ textAlign: "right", color: darkGray }}
+            >
+              <h4 className="mb-3 card-title">רוצים להיות מעודכנים ראשונים?</h4>
+              <form>
+                <div className="mb-3">
+                  <input
+                    type="email"
+                    className="form-control"
+                    placeholder="הזינו את האימייל שלכם"
+                    style={{ textAlign: "right" }}
+                  />
+                </div>
+                <button
+                  type="submit"
+                  className="btn w-100"
+                  style={{
+                    backgroundColor: primaryColor,
+                    color: whiteColor,
+                    border: "none",
+                  }}
+                >
+                  הרשמה
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        {/* אייקונים של רשתות חברתיות */}
+        <div className="mt-3">
+          <div className="d-flex justify-content-center gap-4">
+            <a
+              href="#"
+              className="fs-3 social-icon"
+              style={{ color: primaryColor }}
+            >
+              <i className="bi bi-facebook"></i>
+            </a>
+            <a
+              href="#"
+              className="fs-3 social-icon"
+              style={{ color: primaryColor }}
+            >
+              <i className="bi bi-instagram"></i>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

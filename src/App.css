@@ -1,38 +1,116 @@
-.App {
-  text-align: center;
+/* תמיכה כללית ב-RTL */
+body {
+  direction: rtl;
+  unicode-bidi: embed;
+  text-align: right;
+  overflow: hidden; /* מניעת גלילה */
+  height: 100vh; /* גובה מלא */
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* עיצוב כללי מותאם לצבעי המותג */
+:root {
+  --primary-color: #be2a37;
+  --background-color: #f1efeb;
+  --white-color: #ffffff;
+  --light-gray: #f8f8f8;
+  --dark-gray: #333333;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* הגדרות פונטים */
+@font-face {
+  font-family: "TelAviv-BrutalistBold";
+  src: url("./assets/fonts/TelAviv-BrutalistBold.woff2") format("woff2"),
+    url("./assets/fonts/TelAviv-BrutalistBold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TelAviv-BrutalistLight";
+  src: url("./assets/fonts/TelAviv-BrutalistLight.woff2") format("woff2"),
+    url("./assets/fonts/TelAviv-BrutalistLight.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TelAviv-BrutalistRegular";
+  src: url("./assets/fonts/TelAviv-BrutalistRegular.woff2") format("woff2"),
+    url("./assets/fonts/TelAviv-BrutalistRegular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* סגנון כללי */
+.main-title {
+  font-family: "TelAviv-BrutalistBold", sans-serif;
+}
+
+.subtitle {
+  font-family: "TelAviv-BrutalistLight", sans-serif;
+}
+
+.card-title {
+  font-family: "TelAviv-BrutalistBold", sans-serif;
+}
+
+.btn {
+  font-family: "TelAviv-BrutalistBold", sans-serif;
+}
+
+.btn:hover {
+  background-color: #9a2330;
+  opacity: 0.95;
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+
+.form-control {
+  text-align: right;
+  font-family: "TelAviv-BrutalistRegular", sans-serif;
+}
+
+/* תיקון למיקום של רכיבים שעלולים להציג בכיוון LTR */
+.input-group {
+  flex-direction: row-reverse;
+}
+
+/* סגנונות לתמונת הספה */
+.sofa-image {
+  position: fixed;
+  bottom: -10vh;
+  /* left: 50%; */
+  right: 50;
+  width: 50%;
+  opacity: 0.6; /* שקיפות חלקית */
+  z-index: 0; /* מאחורי התוכן */
+  pointer-events: none; /* לאפשר לחיצות על אלמנטים שמעל התמונה */
+}
+
+/* z-index גבוה יותר לתוכן */
+.z-1 {
+  z-index: 1;
+  position: relative;
+}
+
+/* התאמות למסך קטן */
+@media (max-width: 768px) {
+  .sofa-image {
+    width: 50%; /* רוחב גדול יותר במובייל */
+    bottom: -20vh; /* מיקום שונה במובייל */
+  }
+
+  .main-title {
+    font-size: 2.5rem;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* מניעת גלילה בכל המיכל */
+.overflow-hidden {
+  overflow: hidden;
 }

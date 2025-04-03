@@ -67,18 +67,31 @@ function App() {
         <div className="mt-3">
           <div className="d-flex justify-content-center gap-4">
             <a
-              href="#"
+              href="https://www.facebook.com/LAFORMAISREL/"
               className="fs-3 social-icon"
               style={{ color: primaryColor }}
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <i className="bi bi-facebook"></i>
             </a>
             <a
-              href="#"
+              href="https://www.instagram.com/laforma_il/?hl=en"
               className="fs-3 social-icon"
               style={{ color: primaryColor }}
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <i className="bi bi-instagram"></i>
+            </a>
+            <a
+              href="https://www.tiktok.com/@laformagallery1"
+              className="fs-3 social-icon"
+              style={{ color: primaryColor }}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="bi bi-tiktok"></i>
             </a>
           </div>
         </div>

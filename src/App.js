@@ -95,6 +95,30 @@ function App() {
             </a>
           </div>
         </div>
+        {/* פוטר */}
+        <footer className="mt-4 w-100 text-center" style={{ color: darkGray }}>
+          <div
+            className="container py-3"
+            style={{ backgroundColor: "#e6e4e0", borderRadius: "5px" }}
+          >
+            <div className="row">
+              <div className="col-md-4 mb-3 mb-md-0">
+                <p className="mb-1 fw-bold">שעות פעילות</p>
+                <p className="mb-0">ימים א' - ה': 08:00 - 20:00</p>
+                <p className="mb-0">יום ו': עד 14:00</p>
+                <p className="mb-0">שבת: סגור</p>
+              </div>
+              <div className="col-md-4 mb-3 mb-md-0">
+                <p className="mb-1 fw-bold">כתובת</p>
+                <p className="mb-0">פועלי צדק 3, ירושלים</p>
+              </div>
+              <div className="col-md-4">
+                <p className="mb-1 fw-bold">טלפון</p>
+                <p className="mb-0">📞 055-664-0112</p>
+              </div>
+            </div>
+          </div>
+        </footer>
       </div>
     </div>
   );
